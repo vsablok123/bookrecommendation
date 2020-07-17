@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    
+	<head>
+		<meta charset="utf-8">
+		<title>Books Recommendations</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	</head>
+
+    <body>
+
+        <!-- Website Title -->
+		<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Books Recommendation</span></h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App, Built with Flask.</p>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<div class="results">
+    		{%for genre, recommendation in recommendations.items() %}
+        		<table>
+            		<tr>
+                    	<h2 class='genre-heading'><span class="heading_font">
+                        	<font color="black"> 
+                            {{genre}}
+                            </font></span></h2>
+                    </tr>
+            		<tr>
+            			{%for index, row in recommendation.iterrows() %}
+                    			<td>
+                        			<div style = "text-align:center"
+                            			<a href= paste0('https://www.goodreads.com/book/show/', {{row['best_book_id']}})>
+                                			<img class="gif" src="{{row['image_url']}}" alt="Diabetes Image" width="120px" height="150px">
+                            			</a>
+                            		</div>
+                            		<div>
+                                		{{row['title']}}
+                                	</div>
+                    			</td>
+            			{% endfor %}
+            		</tr>
+    			</table>
+    		{% endfor %}
+		</div>
+
+		<!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/anujvyas/Diabetes-Prediction-Deployment"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/anujkvyas"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Made with ❤️ by Vighnesh Sablok.</p>
+       </div>
+
+	</body>
+</html>
