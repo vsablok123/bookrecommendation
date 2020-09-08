@@ -29,4 +29,5 @@ The model was deployed on a local server using Flask. I created an attactive web
 
 ## Conclusion/Future Steps
 The recommendations given were quite similar to the books a user had already read. I checked for myself as well. The results were actually the books which I want to read at some point(some of them!). This shows that the purpose of this project was achieved. It was also a great learning experience because I developed a model ground up with all the necessary functions/parameters/gridSearch. And deploying a custom model was a challenge as well because we had to take care of refreshing the necessary variables on each new test run. 
-Future steps will be to get recommendations for a new user as well based on how he rates certain popular books. Another idea it to create an interface where a user can enter a book he really loved and the algorithm will recommend books very similar to that one.
+
+Future steps will be to get recommendations for a new user based on how he rates certain popular books. Another idea it to create an interface where a user can enter a book he really loved and the algorithm will recommend books very similar to that one.
